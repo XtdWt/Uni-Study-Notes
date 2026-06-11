@@ -71,3 +71,21 @@ which we can simplify by counting the number of each increment in a grid
 $ X_n = t/n sum_(k=1)^n (n - k + 1) [B(t/n k) - B(t/n (k-1))] $
 which IS a sum of independant Gaussian random variables, so we can find mean and variance as expected. Follows from the linear combination of i.i.d Normals since,
 $ B(t/n k) - B(t/n (k-1)) ~ N(0, t/n) $
+
+== Probability
+=== Question 1
+\
+Borel-Cantelli Lemmas, for a sequence of events ${A_i}_(i>=0)$, \
+First Lemma: if $sum_(k=0)^infinity P(A_n) < infinity$, then $P{A_n "infinitely often"} = 0$\
+Second Lemma: if $sum_(k=0)^infinity P(A_n) = infinity$, then $P{A_n "infinitely often"} = 1$\
+\
+Infinitely Often and Eventually: $P{A_n "infinitely often"} = 1 - P{A_n "eventually"}$
+\
+If $X_(n, m)$ is a triangular array, $accent(X, -)_n := 1/n sum_(m=1)^n X_(n, m)$\
+The following are equivalent:
+$ P(A_n "infinitely often") = 0 $
+$ P(A_n "eventually") = 1 $
+$ P(limsup A_n) = 1 $
+\
+=== Question 2
+Lévy spectral function
