@@ -88,4 +88,12 @@ $ P(A_n "eventually") = 1 $
 $ P(limsup A_n) = 1 $
 \
 === Question 2
+\
+A triangular array $X_(n, k)$ has the condition of Infinite Smallness if for $epsilon > 0$ and for $n -> infinity$
+$ max_(k=1, ..., n) P(|X_(n, k)| >= epsilon) -> 0 $
+Where it is sufficient to consider the behaviour of $P(|X_(n, k)| >= epsilon) forall k $ as $n -> infinity$\
+For a discrete period ${1, ..., n}$, we can split these up into intervals from ${1, ..., n-1}$ and ${2, ..., n}$ forming the Upper and Lower Riemann Sums,
+based on whether $f(1)$ or $f(n)$ is larger.
+$ "Lower Riemann Sum" <= integral f(x) d x <= "Upper Riemann Sum" $
 Lévy spectral function
+\
