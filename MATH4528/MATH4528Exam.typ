@@ -95,5 +95,18 @@ Where it is sufficient to consider the behaviour of $P(|X_(n, k)| >= epsilon) fo
 For a discrete period ${1, ..., n}$, we can split these up into intervals from ${1, ..., n-1}$ and ${2, ..., n}$ forming the Upper and Lower Riemann Sums,
 based on whether $f(1)$ or $f(n)$ is larger.
 $ "Lower Riemann Sum" <= integral f(x) d x <= "Upper Riemann Sum" $
-Lévy spectral function
 \
+Finding the distribution of Z such that $sum_(k=1)^n X_(n, k) ->^d Z$ and Z statisfies the following conditions:
+1. $sum_(k=1)^n P(X_(n, k) > x) -> -L(x)$ on $x > 0$
+\
+2. $sum_(k=1)^n P(X_(n, k) < x) -> L(x)$ on $x < 0$
+\
+3. $lim_(epsilon -> 0) limsup_(n->inf) "Var"[X_(n, k) 1_({abs(X_(n, k)) <= epsilon})] = lim_(epsilon -> 0) liminf_(n->inf) "Var"[X_(n, k) 1_({abs(X_(n, k)) <= epsilon})] = nu$
+\
+4. $sum_(k=1)^n E[X_(n, k) 1_({abs(X_(n, k)) <= tau})] -> c + integral.dash_(abs(x) < tau) x^3/(1+x^2) d L(x) - integral.dash_(abs(x) > tau) x/(1+x^2) d L(x) $
+\
+Lévy spectral function, L(x) can be found by using parts 1 and 2 of the theorem $forall x !=0$.\
+The constant $nu$ can be found using part 3.\
+The constant c can be found using part 4.\
+Together, they can calculate the characteristic function, $E[e^(i t Z)]$ using:
+$ E[e^(i t Z)] = exp{i c t + (v t^2)/2 + integral.dash_(-infinity)^(infinity) (e^(i t x) - 1 - (i t x)/(1+x^2)) d L(x)} $
