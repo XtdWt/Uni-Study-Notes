@@ -26,7 +26,7 @@ $ x_(n+1) = x_n - f(x_n) / (f'(x_n)) $
 - Convergence: convergence is quadratic.
 
 *Secant Method*
-$ x_(n+1) = x_n - f(x_n) (x_n - x_(n-1)) / (f(x_n) - f(x_(n-1)) $
+$ x_(n+1) = x_n - f(x_n) (x_n - x_(n-1)) / (f(x_n) - f(x_(n-1))) $
 - Description: Use estimation of f'(x) instead of a numeric derivative.
 - Conditions: $x_0$ must be 'close' to the root.
 - Convergence: convergence is quadratic.
@@ -97,7 +97,7 @@ $ f'(x) = (f(x+h) - f(x))/h - h/2 f''(c) $
 - Convergence: O(h) first order method.
 
 *Centred Difference*
-$ f'(x) = (f(x+h) - f(x-h))/2h + h^2/6 f''(c) $
+$ f'(x) = (f(x+h) - f(x-h))/(2 h) + h^2/6 f''(c) $
 - Description: Derived by substracting the forward and backwards step.
 - Conditions: f must be differentiable.
 - Convergence: O($h^2$) second order method.
@@ -253,7 +253,6 @@ Find $p_2(x)$ with 3 points and use $x^* = min p_2(x)$ and replace 1 of 3 points
 - Convergence: faster than golden-search if converging
 
 *Naive Multidimensional Optimisation*
-
 - Description: fix all dimension then take steps in best downward direction, repeating until tolerance met for all dimensions.
 
 *Steepest Descent*
