@@ -253,7 +253,6 @@ Find $p_2(x)$ with 3 points and use $x^* = min p_2(x)$ and replace 1 of 3 points
 - Convergence: faster than golden-search if converging
 
 *Naive Multidimensional Optimisation*
-
 - Description: fix all dimension then take steps in best downward direction, repeating until tolerance met for all dimensions.
 
 *Steepest Descent*
