@@ -4,26 +4,22 @@ const subjects = [
   {
     id: "geo_and_topology",
     label: "Geometry and Topology",
-    prefix: "MATH3061/svgs/page_",
-    pdf: "MATH3061/notes.pdf"
+    folder: "MATH3061",
   },
   {
     id: "measure_theory_fourier_transform",
     label: "Measure Theory and Fourier Transform",
-    prefix: "MATH4069/svgs/page_",
-    pdf: "MATH4069/notes.pdf"
+    folder: "MATH4069",
   },
   {
     id: "computational_mathematics",
     label: "Computational Mathematics",
-    prefix: "MATH4076/svgs/page_",
-    pdf: "MATH4076/notes.pdf"
+    folder: "MATH4076",
   },
   {
     id: "probability_martingale_theory",
     label: "Probability and Martingale Theory",
-    prefix: "MATH4528/svgs/page_",
-    pdf: "MATH4528/notes.pdf"
+    folder: "MATH4528",
   },
 ];
 
@@ -38,9 +34,9 @@ document.querySelector(".site-title").textContent = SITE_NAME;
 function initNav() {
   subjects.forEach(({ id, label }) => {
     const btn = document.createElement("button");
-    btn.className   = "nav-tab";
+    btn.className = "nav-tab";
     btn.textContent = label;
-    btn.dataset.id  = id;
+    btn.dataset.id = id;
     btn.setAttribute("role", "tab");
     btn.addEventListener("click", () => { location.hash = id; });
     nav.appendChild(btn);
@@ -56,7 +52,7 @@ function setActiveTab(id) {
   });
 }
 
-async function loadPages({ prefix }) {
+async function loadPages({ folder }) {
   content.innerHTML = "";
   let page = 1;
 
@@ -64,7 +60,7 @@ async function loadPages({ prefix }) {
     const obj = document.createElement("object");
     obj.type = "image/svg+xml";
     obj.className = "page-object";
-    obj.data = `${prefix}${page}${PAGE_EXT}`;
+    obj.data = `${folder}/svgs/page_${page}${PAGE_EXT}`;
     content.appendChild(obj);
 
     const loaded = await new Promise(resolve => {
@@ -81,7 +77,7 @@ async function loadPages({ prefix }) {
     content.innerHTML = `
       <p class="state-msg">
         <strong>No pages found</strong>
-        Expected SVG files at <code>${prefix}1${PAGE_EXT}</code>
+        Expected SVG files at <code>${folder}/svgs/page_1${PAGE_EXT}</code>
       </p>`;
   }
 }
@@ -89,12 +85,13 @@ async function loadPages({ prefix }) {
 function navigate() {
   const id = location.hash.slice(1) || subjects[0].id;
   const subject = subjects.find(s => s.id === id) ?? subjects[0];
+  const pdf_path = `${subject.folder}/notes.pdf`;
 
   document.title = `${subject.label} — ${SITE_NAME}`;
   setActiveTab(subject.id);
 
-  downloadBtn.style.visibility = subject.pdf ? "visible" : "hidden";
-  if (subject.pdf) downloadBtn.href = subject.pdf;
+  downloadBtn.style.visibility = pdf_path ? "visible" : "hidden";
+  if (pdf_path) downloadBtn.href = pdf_path;
 
   loadPages(subject);
 }
