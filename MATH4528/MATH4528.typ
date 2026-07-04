@@ -1,4 +1,4 @@
-#align(center)[= MATH4528: Exam Prep]
+#align(center)[= Probability and Martingale Theory]
 
 
 == Martingales

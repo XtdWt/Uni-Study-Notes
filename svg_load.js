@@ -1,4 +1,4 @@
-const SITE_NAME = "XtdWt: Study Notes";
+const SITE_NAME = "XtdWt: Maths Notes";
 
 const subjects = [
   {
