@@ -2,6 +2,11 @@ const SITE_NAME = "My Study Notes";
 
 const subjects = [
   {
+    id: "",
+    label: "Home",
+    folder: "",
+  },
+  {
     id: "geo_and_topology",
     label: "Geometry and Topology",
     folder: "MATH3061",
@@ -55,6 +60,15 @@ function setActiveTab(id) {
 async function loadPages({ folder }) {
   content.innerHTML = "";
   let page = 1;
+
+  if (folder === "") {
+    content.innerHTML = `
+      <div style="padding: 3rem 0; color: var(--text-secondary);">
+        <h2 style="color: var(--text-primary); margin-bottom: 0.5rem;">Welcome</h2>
+        <p>Select a subject to view notes.</p>
+      </div>`;
+    return
+  }
 
   while (true) {
     const obj = document.createElement("object");
