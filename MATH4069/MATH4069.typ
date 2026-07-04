@@ -1,5 +1,4 @@
-#align(center)[= MATH4069 Notes]
-#align(center)[=== Measure Theory and Fourier Transform (Advanced)]
+#align(center)[= Measure Theory and Fourier Transform]
 
 == Measurable Sets
 #text(weight: "bold")[Definition 1]: $sigma$-algebra\

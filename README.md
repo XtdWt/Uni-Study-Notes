@@ -1,17 +1,17 @@
 # Study Notes
 
 ## About
-Mathematics study notes written in Typst and compiled to pdf and svg. Website using Github static hosting.
+Mathematics study notes written in Typst and compiled to pdf and svg. [Website](https://xtdwt.github.io/Uni-Study-Notes/) using Github static hosting.
 <br>
 ## Setup
-Requires Typst cli
+Requires [Typst](https://github.com/typst/typst) to do the compiling.
 <br>
-compiling pdfs:
-<br>
-`cd FOLDER_NAME_HERE
-typst compile TYPST_FILE notes.pdf`
-<br>
-compiling svgs:
+cli command for compiling pdfs:
 <br>
 `cd FOLDER_NAME_HERE
-typst compile TYPST_FILE "svgs/page_{p}.svg"`
+typst compile "FOLDER_NAME_HERE.typ" notes.pdf`
+<br>
+cli command for compiling svgs:
+<br>
+`cd FOLDER_NAME_HERE
+typst compile "FOLDER_NAME_HERE.typ" "svgs/page_{p}.svg"`

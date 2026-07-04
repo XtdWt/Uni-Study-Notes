@@ -1,4 +1,4 @@
-#align(center)[= MATH4076: Exam Prep]
+#align(center)[= Computational Mathematics]
 
 == Week 1: Floating Points and Errors
 Iterative schemes: $x_(n+1) = f(x_n)$. In general a fixed point, $x^*$ can be found when
