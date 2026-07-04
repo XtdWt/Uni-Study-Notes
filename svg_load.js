@@ -5,28 +5,24 @@ const subjects = [
     id: "geo_and_topology",
     label: "Geometry and Topology",
     prefix: "MATH3061/svgs/page_",
-    pages: 3,
     pdf: "MATH3061/notes.pdf"
   },
   {
     id: "measure_theory_fourier_transform",
     label: "Measure Theory and Fourier Transform",
     prefix: "MATH4069/svgs/page_",
-    pages: 6,
     pdf: "MATH4069/notes.pdf"
   },
   {
     id: "computational_mathematics",
     label: "Computational Mathematics",
     prefix: "MATH4076/svgs/page_",
-    pages: 7,
     pdf: "MATH4076/notes.pdf"
   },
   {
     id: "probability_martingale_theory",
     label: "Probability and Martingale Theory",
     prefix: "MATH4528/svgs/page_",
-    pages: 4,
     pdf: "MATH4528/notes.pdf"
   },
 ];
@@ -60,14 +56,33 @@ function setActiveTab(id) {
   });
 }
 
-function loadPages({ prefix, pages }) {
+async function loadPages({ prefix }) {
   content.innerHTML = "";
-  for (let i = 1; i <= pages; i++) {
+  let page = 1;
+
+  while (true) {
     const obj = document.createElement("object");
     obj.type = "image/svg+xml";
-    obj.data = `${prefix}${i}${PAGE_EXT}`;
     obj.className = "page-object";
+    obj.data = `${prefix}${page}${PAGE_EXT}`;
     content.appendChild(obj);
+
+    const loaded = await new Promise(resolve => {
+      obj.onload  = () => resolve(true);
+      obj.onerror = () => resolve(false);
+    });
+
+    if (!loaded) { obj.remove(); break; }
+
+    page++;
+  }
+
+  if (page === 1) {
+    content.innerHTML = `
+      <p class="state-msg">
+        <strong>No pages found</strong>
+        Expected SVG files at <code>${prefix}1${PAGE_EXT}</code>
+      </p>`;
   }
 }
 
