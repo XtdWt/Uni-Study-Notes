@@ -1,7 +1,7 @@
 # Study Notes
 
 ## About
-Mathematics study notes written in Typst and compiled to pdf and svg. Website using Github static hosting.
+Mathematics study notes written in Typst and compiled to pdf and svg. [Website](https://xtdwt.github.io/Uni-Study-Notes/) using Github static hosting.
 <br>
 ## Setup
 Requires Typst cli

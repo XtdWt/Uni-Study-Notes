@@ -1,4 +1,4 @@
-const SITE_NAME = "My Study Notes";
+const SITE_NAME = "XtdWt: Study Notes";
 
 const subjects = [
   {
@@ -63,10 +63,10 @@ async function loadPages({ folder }) {
 
   if (folder === "") {
     content.innerHTML = `
-      <div style="padding: 3rem 0; color: var(--text-secondary);">
-        <h2 style="color: var(--text-primary); margin-bottom: 0.5rem;">Welcome</h2>
-        <p>Select a subject to view notes.</p>
-      </div>`;
+      <p class="state-msg">
+        <strong>Welcome</strong>
+        Select a subject to view notes.
+      </p>`;
     return
   }
 
@@ -104,7 +104,7 @@ function navigate() {
   document.title = `${subject.label} — ${SITE_NAME}`;
   setActiveTab(subject.id);
 
-  downloadBtn.style.visibility = pdf_path ? "visible" : "hidden";
+  downloadBtn.style.visibility = (subject.folder != "") ? "visible" : "hidden";
   if (pdf_path) downloadBtn.href = pdf_path;
 
   loadPages(subject);
