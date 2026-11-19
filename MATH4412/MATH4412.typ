@@ -104,7 +104,7 @@ $ I(x) ~ sum_(n=0)^(infinity) (alpha_n Gamma(alpha + beta_n + 1)) / (x^(alpha + 
 == Stationary Phase
 $I(x) = integral_a^b f(t) e^(i x psi(t)) d t$ expanded around $t_0$ where $psi'(t_0) = 0$
 General solution for $psi'(t_0) = 0 in [a, b]$
-$ I(x) ~ f(t_0) (2 / (- x i psi''(t_0)) )^(1/2) e^(i x psi(t_0)), psi''(t_0) > 0 $
+$ I(x) ~ f(t_0) (2 / (- x i psi''(t_0)) )^(1/2) e^(i x psi(t_0)) $
 If there are no stationary points, we use the end points and end-point expansion
 $ D = f(t), I = e^(i x g(t)) $
 $ i/x (...) + -1/x^2 (...) + O(1/x^3) $
