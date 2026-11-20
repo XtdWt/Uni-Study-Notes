@@ -12,6 +12,7 @@ Another way to fix the problem of guessing the correct form is to rescale. The s
 1. find dominate balance by equating terms for $x$
 2. determine which 2 terms are dominant (large for when $epsilon ->0$)
 3. apply rescaling and solving using asymptotics
+Taylor's Theorem, $f(x) = sum_(n=0)^N f^((n)) (a) / n! (x - a)^n$
 
 == Properties of Asymptotics and Differntial Equations
 radius of convergence:
@@ -92,7 +93,7 @@ $I(x) = integral_a^b f(t) e^(x g(t)) d t$
 - $g'(t) < 0 "on" [a, b]$, expand f, g around a
 - $g'(t) > 0 "on" [a, b]$, expand f, g around b
 - $g'(t) = 0 "on" [a, b]$, if $g'(c) = 0$, expand f, g around c
-Express integral as $I(x) ~ integral_(a+delta)^(b-delta) tilde(f) (t) e^(x tilde(g) (t)) d t$ depending on boundary $delta$ will change\
+Express integral as $I(x) ~ integral_(a+delta)^(b-delta) tilde(f) (t) e^(x tilde(g) (t)) d t$ depending on boundary $delta$ might be one or the other\
 With multiple contributions, we expand around both depending on the behaviour. Consider all local maxima of g(t)\
 When we expand, we always need at least 1 non-constant term for g(t)\
 
@@ -113,3 +114,27 @@ Rule of thumb for deforming, if $psi(t) = t^beta$ then a deformation of $e^((pi 
 Then let $t = u e^((i pi) / (2 beta))$ to apply deformation.\
 
 == Steepest Descent
+$I(x) = integral f(z) e^(i x g(z)) d z$ where g is complex-valued or has a complex path.
+Let $z = xi + i eta$ and plot $Im(g(z)) = k$ with $Re(g(z))$ representing the direction.\
+e.g. $- eta$ means we decrease as $eta$ increases.\
+e.g. $-2 xi eta$ means we decrease in Q1 and Q3 but increase otherwise.\
+Then integrate along each of the contours, going down.\
+For each of the contours, integrate with
+$ integral_(a-delta)^(a+delta) f(z) e^(i x g(z)) d z, z = a + b t i $
+expanding g if required.\
+Finding contours without knowing exact shape of $Im(g) = k$, consider direction at:
+- endpoints
+- saddle points
+- $eta = plus.minus infinity$
+- $xi = plus.minus infinity$
+- quadrant infinities
+\
+Saddle points can be handled using saddle point formula.\
+Poles can be handled using Residue formula.\
+
+== Useful formula
+$ e^x =  $
+$ 1/x = $
+$ ln(x) = $
+$ sin(x) = $
+$ cos(x) = $
